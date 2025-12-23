@@ -43,16 +43,16 @@ const ResetPasswordPage: React.FC = () => {
   const borderColor = useColorModeValue('gray.200', 'gray.600');
 
   // 路由保护
-  useEffect(() => {
-    if (!isAuthenticated || !user) {
-      toast({
-        title: '需先登录',
-        status: 'warning',
-        duration: 2000,
-        isClosable: true,
-      });
-      navigate('/login');
-    }}, [isAuthenticated, user, navigate, toast]);
+  // useEffect(() => {
+  //   if (!isAuthenticated || !user) {
+  //     toast({
+  //       title: '需先登录',
+  //       status: 'warning',
+  //       duration: 2000,
+  //       isClosable: true,
+  //     });
+  //     navigate('/login');
+  //   }}, [isAuthenticated, user, navigate, toast]);
 
   const validate = () => {
     let isValid = true;
@@ -128,7 +128,7 @@ const ResetPasswordPage: React.FC = () => {
     }
   };
 
-  if (!user) return null;
+  // if (!user) return null;
 
   return (
     <Flex minH="100vh" align="center" justify="center" bg={bgColor} py={12} px={4}>
@@ -155,7 +155,7 @@ const ResetPasswordPage: React.FC = () => {
               <Box>
                 <Heading size="md" color={useColorModeValue('gray.800', 'white')}>重置密码</Heading>
                 <Text fontSize="sm" color={textColor}>
-                  为账号 <Text as="span" fontWeight="bold" color="blue.500">{user.name}</Text> 设置新密码
+                  为账号设置新密码
                 </Text>
               </Box>
             </Flex>

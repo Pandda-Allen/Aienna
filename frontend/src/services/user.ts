@@ -144,7 +144,7 @@ export const userService = {
   resetPassword: async (email: string): Promise<boolean> => {
     // Supabase Auth 重置密码:
     const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: window.location.origin + '/reset-password',
+      redirectTo: window.location.origin + '/#/reset-password',
     });
     if (error) {
       console.error('Error sending password reset email:', error);
